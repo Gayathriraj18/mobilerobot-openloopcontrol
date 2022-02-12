@@ -9,29 +9,29 @@ To develop a python control code to move the mobilerobot along the predefined pa
 
 ## Procedure
 
-Step1:
+# Step1:
 
-<br/>
+Use from robomaster import robot.
 
-Step2:
+# Step2:
 
-<br/>
+Choose the x,y,z - axis movement distance(meters).
 
-Step3:
+# Step3:
 
-<br/>
+Give ep_chassis.move to move straight.
 
-Step4:
+# Step4:
 
-<br/>
+Give time.sleep() for a break.
 
-Step5:
+# Step5:
 
-<br/>
+Give ep_chassis.drive_speed to have a circular movement.
 
 ## Program
 ```python
-from robomaster import robot
+  from robomaster import robot
 import time
 
 if __name__ == '__main__':
@@ -40,46 +40,35 @@ if __name__ == '__main__':
 
     ep_chassis = ep_robot.chassis
 
-    ## Write your code here
+        '''
+    x = speed in x direction( meter/second) [-3.5,3.5]
+    y = speed in y direction( meter/second) [-3.5,3.5]
+    z = rotation about z axis ( degree/second)[-600,600]
+    '''
+    ep_chassis.move(x=2.3, y=0, z=0, xy_speed=0.75).wait_for_completed()
+    ep_chassis.drive_speed(x=0.2,y=0,z=-20)
+    ep_chassis.drive_speed(x=0.5,y=0,z=-20)
+    ep_chassis.drive_speed(x=0.5,y=0,z=-20)
+    time.sleep(2)
 
-
-
-    
     ep_robot.close()
+
 ```
 
 ## MobileRobot Movement Image:
 
-![robo](./img/robomaster.png)
+![robo](./img1.png)
+![robo](./img2.png)
 
-Insert image here
 
 
-<br/>
-<br/>
-<br/>
-<br/>
 
 ## MobileRobot Movement Video:
 
 Upload your video in Youtube and paste your video-id here
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/3H1jTW35Crw/0.jpg)](https://www.youtube.com/watch?v=3H1jTW35Crw)
 
-<br/>
-<br/>
-<br/>
-<br/>
 
 ## Result:
 Thus the python program code is developed to move the mobilerobot in the predefined path.
-
-
-<br/>
-<br/>
-
-```
-Mobile Robotics Laboratory
-Department of Artificial Intelligence and Data Science/ Machine Learning
-Saveetha Engineering College
-```
